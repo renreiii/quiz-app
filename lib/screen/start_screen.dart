@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../widget/colors.dart';
-import '../widget/custom_button.dart';
 import '../widget/styled_text.dart';
 
 class StartScreen extends StatelessWidget {
@@ -8,29 +6,37 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: AppColors.purple,
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                'assets/images/quiz-logo.png',
-                width: 300,
-              ),
-              const SizedBox(height: 36),
-              const StyledText(
-                text: 'Learn Flutter the fun way!',
-              ),
-              const SizedBox(height: 18),
-              const CustomButton(
-                text: 'Start Quiz',
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            'assets/images/quiz-logo.png',
+            width: 300,
+          ),
+          const SizedBox(height: 72),
+          const StyledText(
+            text: 'Learn Flutter the fun way!',
+          ),
+          const SizedBox(height: 18),
+          OutlinedButton.icon(
+            onPressed: () {},
+            label: const Text(
+              'Start Quiz',
+              style: TextStyle(
                 fontSize: 18,
               ),
-            ],
+            ),
+            icon: const Icon(
+              Icons.arrow_right_alt,
+              size: 32,
+            ),
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.all(16),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
